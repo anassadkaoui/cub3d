@@ -1,3 +1,7 @@
+#include "mlx/mlx.h"
+#include <stdlib.h>
+#include <stdio.h>
+
 typedef struct s_map						/*what's the core meaning of this ??*/
 {
     char    **grid;
@@ -29,6 +33,9 @@ typedef struct s_player				/*what's the core meaning of those properties of the 
     double plane_y;
 }   t_player;
 
+
+
+/*everything i need about the world*/
 /*
 	what the world looks like (the map),
 
@@ -45,3 +52,29 @@ typedef struct s_data
     t_colors    colors;
     t_player    player;
 }   t_data;
+
+
+
+/*mlx initialization structure*/
+typedef struct s_mlx_textures
+{
+    void    *north;
+    void    *south;
+    void    *east;
+    void    *west;
+    int     width;
+    int     height;
+}   t_mlx_textures;
+
+typedef struct s_mlx
+{
+    void        *mlx;
+    void        *win;
+    int         width;
+    int         height;
+    t_textures  textures;
+}   t_mlx;
+
+
+
+int init_cub3d(t_mlx *mlx_data);

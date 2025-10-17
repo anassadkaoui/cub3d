@@ -1,7 +1,7 @@
 /* init_data.c */
 #include <stdio.h>
 #include <stdlib.h>
-#include "math.h"
+#include "cub3d.h"
 
 /* Helper to convert RGB to int */
 int rgb_to_int(int r, int g, int b)
@@ -40,7 +40,7 @@ t_data init_data(void)
     /* --- Player --- */
     data.player.x = 2.5;   // center of cell with 'N'
     data.player.y = 2.5;
-    data.player.dir_x = 0;   // facing North
+    data.player.dir_x = 0;   /*facing North*/
     data.player.dir_y = -1;
     data.player.plane_x = 0.66; // FOV
     data.player.plane_y = 0;
@@ -48,14 +48,14 @@ t_data init_data(void)
     return data;
 }
 
-/* Test printing */
-int main(void)
-{
-    t_data data = init_data();
-    printf("Map size: %dx%d\n", data.map.width, data.map.height);
-    printf("Player pos: (%f, %f)\n", data.player.x, data.player.y);
-    printf("Player dir: (%f, %f)\n", data.player.dir_x, data.player.dir_y);
-    printf("Floor color: 0x%X\n", data.colors.floor);
-    printf("Ceiling color: 0x%X\n", data.colors.ceiling);
-    return 0;
-}
+// /* Test printing */
+// int main(void)
+// {
+//     t_data data = init_data();
+//     printf("Map size: %dx%d\n", data.map.width, data.map.height);
+//     printf("Player pos: (%f, %f)\n", data.player.x, data.player.y);
+//     printf("Player dir: (%f, %f)\n", data.player.dir_x, data.player.dir_y);
+//     printf("Floor color: 0x%X\n", data.colors.floor);
+//     printf("Ceiling color: 0x%X\n", data.colors.ceiling);
+//     return 0;
+// }

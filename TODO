@@ -1,0 +1,11 @@
+thinking process to solve the segfault:
+
+
+
+first:what's the core meaning of the image object created by:
+    img.img = mlx_new_image(mlx_data.mlx, mlx_data.width, mlx_data.height);
+
+
+
+second:
+    img.addr = mlx_get_data_addr(img.img, &img.bpp, &img.line_len, &img.endian);
